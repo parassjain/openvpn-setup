@@ -11,7 +11,7 @@ services:
     image: kylemanna/openvpn
     container_name: openvpn
     ports:
-     - "1194:1194/udp"
+     - "443:1194/udp"
     restart: always
     volumes:
      - ./openvpn-data/conf:/etc/openvpn

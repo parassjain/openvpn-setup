@@ -23,7 +23,7 @@ this wiki is referenced from https://www.digitalocean.com/community/tutorials/ho
   private key used by the newly generated certificate authority.
 
       docker-compose -f openvpn.yml up -d
-      docker run --volumes-from openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://vpn.paras.cloud:433
+      docker run --volumes-from openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://vpn.paras.cloud:443
       docker run --volumes-from openvpn --rm -it kylemanna/openvpn ovpn_initpki
 
       
