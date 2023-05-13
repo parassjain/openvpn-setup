@@ -1,7 +1,9 @@
+
+## my section
 # OpenVPN for Docker
 
 OpenVPN server in a Docker container complete with an EasyRSA PKI CA.
-
+this wiki is referenced from https://www.digitalocean.com/community/tutorials/how-to-run-openvpn-in-a-docker-container-on-ubuntu-14-04
 #### Upstream Links
 
 * Docker Registry @ [kylemanna/openvpn](https://hub.docker.com/r/kylemanna/openvpn/)
@@ -21,15 +23,14 @@ OpenVPN server in a Docker container complete with an EasyRSA PKI CA.
   private key used by the newly generated certificate authority.
 
       docker-compose -f openvpn.yml up -d
-      docker run --volumes-from openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://13.233.213.24:1194
+      docker run --volumes-from openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://vpn.paras.cloud:433
       docker run --volumes-from openvpn --rm -it kylemanna/openvpn ovpn_initpki
 
       
 
 * Generate a client certificate without a passphrase
 
-       docker run --volumes-from openvpn --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass
-      docker run --volumes-from openvpn --rm kylemanna/openvpn ovpn_getclient CLIENTNAME > CLIENTNAME.ovpn
+      docker run --volumes-from openvpn --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass
 
 * Retrieve the client configuration with embedded certificates
 
